@@ -499,6 +499,9 @@ Parser.prototype.onOpenTag = function (selfClose) {
       if (parseInt(styleObj.width) > windowWidth) {
         styleObj.height = undefined
       }
+      if (styleObj['object-fit']){
+        node['object-fit'] = styleObj['object-fit']
+      }
       // 记录是否设置了宽高
       if (!isNaN(parseInt(styleObj.width))) {
         node.w = 'T'
